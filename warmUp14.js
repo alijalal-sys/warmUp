@@ -1,7 +1,8 @@
 /*
 Say you have an array for which the i element is the price of a given stock on day i.
 
-If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.
+If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), 
+design an algorithm to find the maximum profit.
 
 Note that you cannot sell a stock before you buy one.
 
@@ -19,5 +20,34 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 */
 
 var maxProfit = function(prices) {
-  // YOUR CODE HERE
+  var profit = 0;
+  var minPrice = prices[0];
+  for(var i = 0; i < prices.length; i++){ 
+  // Here We iterate Over prices Array To get the min Price
+  	if(prices[i] < minPrice){
+  		minPrice = prices[i];
+  	}
+  }
+
+  var maxPrice = 0;
+  for(var j = prices[minPrice]; j < prices.length; j++){
+  // Here We iterate over the array again with index of the MIN variable
+  // To see if there is any Bigger price after it 
+  	if(prices[j] > maxPrice){
+  		maxPrice = prices[j];
+  	}
+  }
+
+  // Here We check if the max price is bigger than min price
+  // Return the Profit
+  if(maxPrice > minPrice){
+  	profit = maxPrice - minPrice;
+    return 'max Profit = ' + profit;
+  }
+
+  // Else return 0
+  else {
+  	return 'max Profit = ' + 0;
+  }
+  
 };

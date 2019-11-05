@@ -4,3 +4,12 @@
 //
 //
 // Note : you can`t use any built-in functions .
+
+function reverseStr(str){
+	var newStr = '';
+	var arrayStr = str.split(' ');
+	for(var i = arrayStr.length - 1; i >= 0; i--){
+		newStr += arrayStr[i] + ' ';
+	}
+	return newStr
+}

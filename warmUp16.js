@@ -52,12 +52,16 @@ function formBallon(text){
 	var secondArr = [];
 	var result = 0;
 	var arr = text.split('');
+	// Here We iterate Over text to get only the 'b,a,l,l,o,n' letters 
 	for(var i = 0; i < arr.length; i++){
 		if(arr[i] === 'b' || arr[i] === 'a' || arr[i] === 'l' || arr[i] === 'l' || arr[i] === 'o' || arr[i] === 'n'){
 			newArr.push(arr[i]);
 		}
 	}
+
+	// here we check if the array includes all of the 'b,a,l,l,o,n' letters
 	for(var j = 0; j < newArr.length; j++){
+	// if so we splice them and increase the result by 1	
 		if(newArr.includes('b') && newArr.includes('a') && newArr.includes('l') && newArr.includes('l') && newArr.includes('o') && newArr.includes('n')){
 			newArr.splice(j, 6)
 			result += 1;
